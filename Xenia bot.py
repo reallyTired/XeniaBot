@@ -9,6 +9,8 @@ Wordbank1 = ['fuckin ','piece of ','stupid ','dumb-ass ','slow '] # First set of
 Banklen1 = len(Wordbank1) # Totals the number of words in the first wordbank
 Wordbank2 = ['cunt','wanker','cuck','fucker','shit'] # Second set of words for insult generator
 Banklen2 =len(Wordbank1) # Totals the number of words in the second wordbank
+Status = ['mashing A','retiming failed runs','doing tas runs for jynjis PBs','awaiting AI uprising','hating baku','skipping the mage'] # Set of selectable status's
+Statlen = len(Status) # Total number of status's
 
 class MyClient(discord.Client):
     async def on_ready(self): # Prints basic bot info to console
@@ -16,9 +18,12 @@ class MyClient(discord.Client):
         print(client.user.name)
         print(client.user.id)
         print('------')
+        await client.change_presence(game=discord.Game(name="'!help' for commands"))
 
     async def on_message(self, message):
 
+        await client.change_presence(game=discord.Game(name='(!help) ' + Status[random.randint(1,Statlen)]))
+        
         if message.author == self.user: # Stops it responding to itself
             return
 
