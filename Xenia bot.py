@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import discord # Import Discord API library
 import asyncio # Import the Async library
 import random # Imports psuedo random number generation library
@@ -10,6 +12,7 @@ admins = ['Admin', 'VAC B&']
 pattern = re.compile("[^\s\"']+|\"([^\"]*)\"|'([^']*)'") # Sets up a regexp for later
 
 Token = '' # The token that connects it to the bot account 
+
 try:
     f = open("token.tkn").read()
     Token = f
