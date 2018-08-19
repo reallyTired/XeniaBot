@@ -10,6 +10,11 @@ admins = ['Admin', 'VAC B&']
 pattern = re.compile("[^\s\"']+|\"([^\"]*)\"|'([^']*)'") # Sets up a regexp for later
 
 Token = '' # The token that connects it to the bot account 
+try:
+    f = open("token.tkn").read()
+    Token = f
+except Exception as e:
+    raise Exception (str(e) + ": please provide a valid Discord token in the token.tkn file!")
 
 class MyClient(discord.Client):
     async def on_ready(self): # Prints basic bot info to console
