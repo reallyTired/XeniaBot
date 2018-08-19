@@ -9,7 +9,7 @@ admins = ['Admin', 'VAC B&']
 
 pattern = re.compile("[^\s\"']+|\"([^\"]*)\"|'([^']*)'") # Sets up a regexp for later
 
-Token = 'NDgwMDU2MDE5OTg5NDMwMjc0.DliyyA.MEsH1Ce9ECMJMdt4nOjW_XYjOWo' # The token that connects it to the bot account 
+Token = '' # The token that connects it to the bot account 
 
 class MyClient(discord.Client):
     async def on_ready(self): # Prints basic bot info to console
